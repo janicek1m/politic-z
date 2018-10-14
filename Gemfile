@@ -5,4 +5,5 @@ gem 'pry'
 gem 'sinatra'
 gem 'httparty'
 gem 'json'
+gem 'pp'
 
