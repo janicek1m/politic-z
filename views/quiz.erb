@@ -1,0 +1,730 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Which Political Party?</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/style.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="contact is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header" class="alt">
+				<h1 id="logo"><a href="/">POLITIC-Z</a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="submenu">
+								<a href="#">Vote</a>
+							<ul>
+								<li><a href="/register">Register to Vote</a></li>
+								<li><a href="/elections">Upcoming Elections</a></li>
+							<li><a href="/locations">Polling Locations</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#">Learn</a>
+								<ul>
+									<li><a href="/senators" >Find Your Senators</a></li>
+									<li><a href="/representative">Find Your Representative</a></li>
+									<li><a href="/quiz">Political Party Quiz</a></li>
+									<!--<li><a href="/natquiz">Naturalization Quiz</a></li>-->
+									
+								</ul>
+							<li><a href="/news">Stay Informed</a></li>
+						</ul>
+					</nav>
+			</header>
+
+			<!-- Main -->
+			<br>
+				<article id="main">
+				  <center>
+					<header>
+						<span class="icon fa-question"></span>
+						<h2>What Political Party do Your Views Align With?</h2>
+						<p> Curious what political party your views identify view? Take this 25 question quiz to find out! <br> Select your opinion: Strongly Agree, Agree, Neutral, Disagree, or Strongly Disagree, for each statement, then submit!</p>
+					</header>
+					</center>
+            <style>
+              input[type=radio]
+                {
+                  -webkit-appearance:radio;
+                }
+                h1.likert-header {
+  padding-left:4.25%;
+  margin:20px 0 0;
+}
+form .statement {
+  display:block;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 30px 0 0 4.25%;
+  margin-bottom:10px;
+}
+form .likert {
+  list-style:none;
+  width:100%;
+  margin:0;
+  padding:0 0 35px;
+  display:block;
+  border-bottom:2px solid #efefef;
+}
+form .likert:last-of-type {border-bottom:0;}
+form .likert:before {
+  content: '';
+  position:relative;
+  top:11px;
+  left:11%;
+  display:block;
+  background-color:#efefef;
+  height:4px;
+  width:78%;
+}
+form .likert li {
+  display:inline-block;
+  width:19%;
+  text-align:center;
+  vertical-align: top;
+}
+form .likert li input[type=radio] {
+  display:block;
+  position:relative;
+  top:0;
+  left:50%;
+  margin-left:-6px;
+  
+}
+form .likert li label {width:100%;}
+
+            </style>
+            
+						<section class="wrapper style4 special container large">
+
+						  <div class="wrap">
+<form action="/quizresults" method="POST">
+    <label class="statement">1. The role of government should be to provide people the freedom necessary to pursue their own goals.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q1" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q1" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q1" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q1" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q1" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">2. The U.S. should not accept refugees from Syria.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q2" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q2" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q2" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q2" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q2" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">3. The US should not assassinate suspected terrorists in foreign countries.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q3" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q3" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q3" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q3" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q3" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">4. We need to provide opportunities to make it possible for poor and low-income workers to become self-reliant.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q4" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q4" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q4" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q4" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q4" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">5. We need high taxes for social welfare programs, to provide for the poor. </label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q5" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q5" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q5" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q5" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q5" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">6. All individuals, regardless of their sex or sexual orientation, have the right to marry.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q6" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q6" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q6" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q6" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q6" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">7. A woman should have the legal right to an elective abortion, meaning the right to terminate her pregnancy.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q7" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q7" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q7" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q7" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q7" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">8. The government should stop funding <a href="https://www.plannedparenthood.org/" target='_blank'>Planned Parenthood</a>.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q8" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q8" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q8" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q8" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q8" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">9. The government should increase environmental regulations to prevent climate change.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q9" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q9" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q9" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q9" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q9" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">10. Changes in global temperatures are natural over long periods of time. Proposed laws to reduce carbon emissions will do nothing to help the environment and will cause significant price increases for all.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q10" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q10" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q10" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q10" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q10" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">11. U.S. should expand offshore oil drilling and deregulate the energy sector to let the free market determine the best energy sources.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q11" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q11" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q11" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q11" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q11" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">12. It is the duty of the government to alleviate social ills and to protect civil liberties and individual and human rights.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q12" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q12" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q12" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q12" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q12" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">13. Individuals should be admitted to schools and hired for jobs based on their ability. It is unfair to use race as a factor in the selection process.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q13" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q13" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q13" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q13" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q13" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">14. Government must protect citizens from the greed of big business.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q14" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q14" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q14" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q14" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q14" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">15. Public schools are the best way to educate students. Government should focus additional funds on existing public schools, raising teacher salaries, and reducing class size.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q15" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q15" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q15" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q15" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q15" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">16. The Second Amendment gives citizens the right to keep and bear arms. Individuals have the right to defend themselves with arms. </label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q16" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q16" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q16" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q16" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q16" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">17. The First Amendment to the Constitution prevents the government from establishing a national church. However, it does not prevent God from being acknowledged in schools and government buildings.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q17" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q17" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">18. There are millions of Americans who can't afford health care and are deprived of this basic right. Every American has a right to affordable healthcare. The government should provide equal healthcare benefits for all, regardless of their ability to pay.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q18" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q18" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">19. The federal government should raise the federal minimum wage.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q19" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q19" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q19" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q19" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q19" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">20. Internet service providers should be allowed to speed up access to popular websites, to those pay higher rates, at the expense of slowing down access to less popular websites, that require lower rates.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q20" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q20" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q20" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q20" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q20" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">21. I support the Patient Protection and Affordable Care Act (Obamacare).</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q21" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q21" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q21" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q21" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q21" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">22. The U.S. should not build a wall along the southern border.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q22" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q22" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q22" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q22" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q22" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">23. The government should enforce immigration laws. Those who break the law by entering the U.S. illegally should not have the same rights as those who obey the law by entering legally.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q23" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q23" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q23" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q23" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q23" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">24. The electoral college should not be abolished because it ensures representation of the whole country instead of just major cities.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q24" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q24" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q24" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q24" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="24" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+    <label class="statement">25. The government should decrease or maintain the current amount of military spending.</label>
+    <ul class='likert'>
+      <li>
+        <input type="radio" name="q25" value="strong_agree">
+        <label>Strongly agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q25" value="agree">
+        <label>Agree</label>
+      </li>
+      <li>
+        <input type="radio" name="q25" value="neutral">
+        <label>Neutral</label>
+      </li>
+      <li>
+        <input type="radio" name="q25" value="disagree">
+        <label>Disagree</label>
+      </li>
+      <li>
+        <input type="radio" name="q25" value="strong_disagree">
+        <label>Strongly disagree</label>
+      </li>
+    </ul>
+    
+
+    
+    <ul class="buttons">
+		  <li><button type="submit" class="button">submit</button></li>
+		</ul>
+  </form>
+</div>
+							</form>
+						</section>
+				</article>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+
+	</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Recent News on Politics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/style.css"/>
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="contact is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<header id="header" class="alt">
+				<h1 id="logo"><a href="/">POLITIC-Z</a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="submenu">
+								<a href="#">Vote</a>
+							<ul>
+								<li><a href="/register">Register to Vote</a></li>
+								<li><a href="/elections">Upcoming Elections</a></li>
+								<li><a href="/locations">Polling Locations</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#">Learn</a>
+								<ul>
+									<li><a href="/senators" >Find Your Senators</a></li>
+									<li><a href="/representative">Find Your Representative</a></li>
+									<li><a href="/quiz">Political Party Quiz</a></li>
+									<!--<li><a href="/natquiz">Naturalization Quiz</a></li>-->
+								</ul>
+							<li><a href="/news">Stay Informed</a></li>
+						</ul>
+					</nav>
+			</header>
+
+				</div>
+				</div>
+				<br>
+				<br>
+				<br>
+				<center>
+					<br>
+					<br>
+
+					
+					<h2>Recent News</h2>
+					<p>A political news stream that updates to give you the most recent events in American politics.</0>
+				</center>
+			<style>
+				.imagesize img{
+				    width: 100%;
+				}
+				.panel-title{
+				    
+				 color:black;
+				 text-decoration: none;
+				}
+				#profile1 {
+				    /*background-color:whitesmoke;*/
+				    /*padding:2.5%;*/
+				}
+				a{
+					border-bottom: dotted 1px;
+				}
+				</style>
+				    <div class="col-md-3">
+				    
+				        <div id="profile1"></div>
+				      
+				      <div id="profile"></div>
+				
+				    </div>
+				
+				    <script
+				  src="https://code.jquery.com/jquery-3.1.1.js"></script>
+				    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+$.ajax({
+ url:'https://newsapi.org/v2/everything?q=government-united-states&apiKey=9837b996e14446e09d3fe495844a4003',
+    }).done(function(data){
+       console.log(data);
+    for(var i=0;i<data.articles.length;i++){
+       $('#profile1').append(`
+            <hr/>
+            <div>
+            <section class="wrapper style3 special container medium">
+
+            <strong><a href="${data.articles[i].url}" target='_blank'<h3 class="panel-title">${data.articles[i].source.name} - ${data.articles[i].title}</h3></a>            <br></strong>
+            
+            
+            <br>
+            <p class="imagesize"> <img src="${data.articles[i].urlToImage}"></p>
+            <p class="panel-title">By: ${data.articles[i].author}</p>
+            <p class="panel-title">${data.articles[i].description}</h6>
+            </div>
+             </section>
+           `);
+       }
+      });    
+     
+    });
+     </script>
+     <footer>
+     	<center>
+     		<h4>Powered by <a href="newsapi.org"><u>newsapi.org</u></h4>
+     	</center>
+     </footer>
+  </body>
+				
+				<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

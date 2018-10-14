@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<hmtl>
+  <head>
+    <title>Upcoming Elections</title>
+	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/style.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		
+  </head>
+ 
+  <body>
+  	<style>
+  	
+				p {
+          /*display: block;*/
+          margin-block-start: 0em;
+          margin-block-end: 0em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+}
+				
+				p{
+					/*line-height: 0.2;*/
+				}
+				
+		h5 {
+			font-size: 17px;
+			line-height: 0.1;
+		}
+		
+		
+				
+  	</style>
+     <script>
+var newString = ""
+
+function replaceSpace(string){
+  for (let i = 0; i < string.length; i++){
+    if (string[i] == " "){
+      newString += "+";
+    }else{
+    newString += string[i]
+    }
+  }; 
+  var returnString = newString
+  newString = ""
+  return String(returnString)
+}
+
+$(document).ready(function(){
+  $('#representatives').click(function(){
+    let addressOrg = $('#address').val();
+    let cityOrg = $('#city').val();
+    let state = $('#state').val();
+    let address = replaceSpace(addressOrg);
+    let city = replaceSpace(cityOrg);
+
+    $.ajax({
+      url: 
+      (`https://www.googleapis.com/civicinfo/v2/voterinfo?address=${address}%20${city}%20${state}&electionId=2000&key=AIzaSyDFYpjPCBUVQLyfS39-lBKRWCkD7-u4zug`),
+      type:'GET',
+      data: {
+        format: 'json'
+      },    
+      success:function(response){
+        const container1 = document.createElement("section");
+        const container2 = document.createElement("section");
+        const container3 = document.createElement("section");
+        const container4 = document.createElement("section");
+        const container5 = document.createElement("section");
+        const h3 = document.createElement('h2');
+        const h31 = document.createElement('h2');
+        const h32 = document.createElement('h2');
+        const h33 = document.createElement('h2');
+        const h34 = document.createElement('h2');
+        h3.textContent = response.contests[0].office + " - " + response.contests[0].district.name;
+        h31.textContent = response.contests[1].office + " - " + response.contests[1].district.name;
+        h32.textContent = response.contests[2].office + " - " + response.contests[2].district.name;
+        h33.textContent = response.contests[3].office + " - " + response.contests[3].district.name;
+        h34.textContent = response.contests[4].office + " - " + response.contests[4].district.name;
+        container1.appendChild(h3);
+        container2.appendChild(h31);
+        container3.appendChild(h32);
+        container4.appendChild(h33);
+        container5.appendChild(h34);
+        
+        var candidateNumber = response.contests[0].candidates.length;
+          const h1 = document.createElement('p');
+          h1.textContent = response.contests[0].candidates[0].name + " - " + response.contests[0].candidates[0].party;
+          const h12 = document.createElement('p');
+          h12.textContent = response.contests[0].candidates[1].name + " - " + response.contests[0].candidates[1].party;
+      
+          
+        if (candidateNumber == 2){
+          container1.appendChild(h1);
+          container1.appendChild(h12);
+        }
+        
+        if (candidateNumber == 3){
+           container1.appendChild(h1);
+          container1.appendChild(h12);
+            const h13 = document.createElement('p');
+           h13.textContent = response.contests[0].candidates[2].name + " - " + response.contests[0].candidates[2].party;
+          container1.appendChild(h13);
+        }
+        
+        if (candidateNumber == 4){
+         container1.appendChild(h1);
+          container1.appendChild(h12);
+            const h13 = document.createElement('p');
+           h13.textContent = response.contests[0].candidates[2].name + " - " + response.contests[0].candidates[2].party;
+          const h14 = document.createElement('p');
+          h14.textContent = response.contests[0].candidates[3].name + " - " + response.contests[0].candidates[3].party;
+          container1.appendChild(h13);
+          container1.appendChild(h14);
+        }
+        
+        if (candidateNumber == 5){
+           container1.appendChild(h1);
+          container1.appendChild(h12);
+               const h13 = document.createElement('p');
+           h13.textContent = response.contests[0].candidates[2].name + " - " + response.contests[0].candidates[2].party;
+          const h14 = document.createElement('p');
+          h14.textContent = response.contests[0].candidates[3].name + " - " + response.contests[0].candidates[3].party;
+          const h15 = document.createElement('p');
+          h15.textContent = response.contests[0].candidates[4].name + " - " + response.contests[0].candidates[4].party; 
+          container1.appendChild(h13);
+          container1.appendChild(h14);
+        container1.appendChild(h15);
+
+        }
+        
+        if (candidateNumber == 6){
+           container1.appendChild(h1);
+          container1.appendChild(h12);
+              const h13 = document.createElement('p');
+           h13.textContent = response.contests[0].candidates[2].name + " - " + response.contests[0].candidates[2].party;
+          const h14 = document.createElement('p');
+          h14.textContent = response.contests[0].candidates[3].name + " - " + response.contests[0].candidates[3].party;
+          const h15 = document.createElement('p');
+          h15.textContent = response.contests[0].candidates[4].name + " - " + response.contests[0].candidates[4].party; 
+          const h16 = document.createElement('p');
+          h16.textContent = response.contests[0].candidates[5].name + " - " + response.contests[0].candidates[5].party;
+          container1.appendChild(h13);
+          container1.appendChild(h14);
+        container1.appendChild(h15);
+        container1.appendChild(h16);
+
+        }
+        
+        if (candidateNumber == 7){
+           container1.appendChild(h1);
+          container1.appendChild(h12);
+             const h13 = document.createElement('p');
+           h13.textContent = response.contests[0].candidates[2].name + " - " + response.contests[0].candidates[2].party;
+          const h14 = document.createElement('p');
+          h14.textContent = response.contests[0].candidates[3].name + " - " + response.contests[0].candidates[3].party;
+          const h15 = document.createElement('p');
+          h15.textContent = response.contests[0].candidates[4].name + " - " + response.contests[0].candidates[4].party; 
+          const h16 = document.createElement('p');
+          h16.textContent = response.contests[0].candidates[5].name + " - " + response.contests[0].candidates[5].party;
+          const h17 = document.createElement('p');
+          h17.textContent = response.contests[0].candidates[6].name + " - " + response.contests[0].candidates[6].party;
+          container1.appendChild(h13);
+          container1.appendChild(h14);
+        container1.appendChild(h15);
+        container1.appendChild(h16);
+        container1.appendChild(h17);
+
+        }
+ var candidateNumber1 = response.contests[1].candidates.length;
+          const z1 = document.createElement('p');
+          z1.textContent = response.contests[1].candidates[0].name + " - " + response.contests[1].candidates[0].party;
+          const z12 = document.createElement('p');
+          z12.textContent = response.contests[1].candidates[1].name + " - " + response.contests[1].candidates[1].party;
+      
+          
+        if (candidateNumber1 == 2){
+          container2.appendChild(z1);
+          container2.appendChild(z12);
+        }
+        
+        if (candidateNumber1 == 3){
+           container2.appendChild(z1);
+          container2.appendChild(z12);
+            const z13 = document.createElement('p');
+           z13.textContent = response.contests[1].candidates[2].name + " - " + response.contests[1].candidates[2].party;
+          container2.appendChild(z13);
+        }
+        
+        if (candidateNumber1 == 4){
+         container2.appendChild(z1);
+          container2.appendChild(z12);
+            const z13 = document.createElement('p');
+           z13.textContent = response.contests[1].candidates[2].name + " - " + response.contests[1].candidates[2].party;
+          const z14 = document.createElement('p');
+          z14.textContent = response.contests[1].candidates[3].name + " - " + response.contests[1].candidates[3].party;
+          container2.appendChild(z13);
+          container2.appendChild(z14);
+        }
+        
+        if (candidateNumber1 == 5){
+           container2.appendChild(z1);
+          container2.appendChild(z12);
+               const z13 = document.createElement('p');
+           z13.textContent = response.contests[1].candidates[2].name + " - " + response.contests[1].candidates[2].party;
+          const z14 = document.createElement('p');
+          z14.textContent = response.contests[1].candidates[3].name + " - " + response.contests[1].candidates[3].party;
+          const z15 = document.createElement('p');
+          z15.textContent = response.contests[1].candidates[4].name + " - " + response.contests[1].candidates[4].party; 
+          container2.appendChild(z13);
+          container2.appendChild(z14);
+        container2.appendChild(z15);
+
+        }
+        
+        if (candidateNumber1 == 6){
+           container2.appendChild(z1);
+          container2.appendChild(z12);
+              const z13 = document.createElement('p');
+           z13.textContent = response.contests[1].candidates[2].name + " - " + response.contests[1].candidates[2].party;
+          const z14 = document.createElement('p');
+          z14.textContent = response.contests[1].candidates[3].name + " - " + response.contests[1].candidates[3].party;
+          const z15 = document.createElement('p');
+          z15.textContent = response.contests[1].candidates[4].name + " - " + response.contests[1].candidates[4].party; 
+          const z16 = document.createElement('p');
+          z16.textContent = response.contests[1].candidates[5].name + " - " + response.contests[1].candidates[5].party;
+          container2.appendChild(z13);
+          container2.appendChild(z14);
+        container2.appendChild(z15);
+        container2.appendChild(z16);
+
+        }
+        
+        if (candidateNumber1 == 7){
+           container2.appendChild(z1);
+          container2.appendChild(z12);
+             const z13 = document.createElement('p');
+           z13.textContent = response.contests[1].candidates[2].name + " - " + response.contests[1].candidates[2].party;
+          const z14 = document.createElement('p');
+          z14.textContent = response.contests[1].candidates[3].name + " - " + response.contests[1].candidates[3].party;
+          const z15 = document.createElement('p');
+          z15.textContent = response.contests[1].candidates[4].name + " - " + response.contests[1].candidates[4].party; 
+          const z16 = document.createElement('p');
+          z16.textContent = response.contests[1].candidates[5].name + " - " + response.contests[1].candidates[5].party;
+          const z17 = document.createElement('p');
+          z17.textContent = response.contests[1].candidates[6].name + " - " + response.contests[1].candidates[6].party;
+          container2.appendChild(z13);
+          container2.appendChild(z14);
+        container2.appendChild(z15);
+        container2.appendChild(z16);
+        container2.appendChild(z17);
+
+        }
+          
+         var candidateNumber2 = response.contests[2].candidates.length;
+          const x1 = document.createElement('p');
+          x1.textContent = response.contests[2].candidates[0].name + " - " + response.contests[2].candidates[0].party;
+          const x12 = document.createElement('p');
+          x12.textContent = response.contests[2].candidates[1].name + " - " + response.contests[2].candidates[1].party;
+      
+          
+        if (candidateNumber2 == 2){
+          container3.appendChild(x1);
+          container3.appendChild(x12);
+        }
+        
+        if (candidateNumber2 == 3){
+           container3.appendChild(x1);
+          container3.appendChild(x12);
+            const x13 = document.createElement('p');
+           x13.textContent = response.contests[2].candidates[2].name + " - " + response.contests[2].candidates[2].party;
+          container3.appendChild(x13);
+        }
+        
+        if (candidateNumber2 == 4){
+         container3.appendChild(x1);
+          container3.appendChild(x12);
+            const x13 = document.createElement('p');
+           x13.textContent = response.contests[2].candidates[2].name + " - " + response.contests[2].candidates[2].party;
+          const x14 = document.createElement('p');
+          x14.textContent = response.contests[2].candidates[3].name + " - " + response.contests[2].candidates[3].party;
+          container3.appendChild(x13);
+          container3.appendChild(x14);
+        }
+        
+        if (candidateNumber2 == 5){
+           container3.appendChild(x1);
+          container3.appendChild(x12);
+               const x13 = document.createElement('p');
+           x13.textContent = response.contests[2].candidates[2].name + " - " + response.contests[2].candidates[2].party;
+          const x14 = document.createElement('p');
+          x14.textContent = response.contests[2].candidates[3].name + " - " + response.contests[2].candidates[3].party;
+          const x15 = document.createElement('p');
+          x15.textContent = response.contests[2].candidates[4].name + " - " + response.contests[2].candidates[4].party; 
+          container3.appendChild(x13);
+          container3.appendChild(x14);
+        container3.appendChild(x15);
+
+        }
+        
+        if (candidateNumber2 == 6){
+           container3.appendChild(x1);
+          container3.appendChild(x12);
+              const x13 = document.createElement('p');
+           x13.textContent = response.contests[2].candidates[2].name + " - " + response.contests[2].candidates[2].party;
+          const x14 = document.createElement('p');
+          x14.textContent = response.contests[2].candidates[3].name + " - " + response.contests[2].candidates[3].party;
+          const x15 = document.createElement('p');
+          x15.textContent = response.contests[2].candidates[4].name + " - " + response.contests[2].candidates[4].party; 
+          const x16 = document.createElement('p');
+          x16.textContent = response.contests[2].candidates[5].name + " - " + response.contests[2].candidates[5].party;
+          container3.appendChild(x13);
+          container3.appendChild(x14);
+        container3.appendChild(x15);
+        container3.appendChild(x16);
+
+        }
+        
+        if (candidateNumber2 == 7){
+           container3.appendChild(x1);
+          container3.appendChild(x12);
+             const x13 = document.createElement('p');
+           x13.textContent = response.contests[2].candidates[2].name + " - " + response.contests[2].candidates[2].party;
+          const x14 = document.createElement('p');
+          x14.textContent = response.contests[2].candidates[3].name + " - " + response.contests[2].candidates[3].party;
+          const x15 = document.createElement('p');
+          x15.textContent = response.contests[2].candidates[4].name + " - " + response.contests[2].candidates[4].party; 
+          const x16 = document.createElement('p');
+          x16.textContent = response.contests[2].candidates[5].name + " - " + response.contests[2].candidates[5].party;
+          const x17 = document.createElement('p');
+          x17.textContent = response.contests[2].candidates[6].name + " - " + response.contests[2].candidates[6].party;
+          container3.appendChild(x13);
+          container3.appendChild(x14);
+        container3.appendChild(x15);
+        container3.appendChild(x16);
+        container3.appendChild(x17);
+
+        }
+         var cand = response.contests[3].candidates.length;
+          const y1 = document.createElement('p');
+          y1.textContent = response.contests[3].candidates[0].name + " - " + response.contests[3].candidates[0].party;
+          const y12 = document.createElement('p');
+          y12.textContent = response.contests[3].candidates[1].name + " - " + response.contests[3].candidates[1].party;
+      
+          
+        if (cand == 2){
+          container4.appendChild(y1);
+          container4.appendChild(y12);
+        }
+        
+        if (cand == 3){
+           container4.appendChild(y1);
+          container4.appendChild(y12);
+            const y13 = document.createElement('p');
+           y13.textContent = response.contests[3].candidates[2].name + " - " + response.contests[3].candidates[2].party;
+          container4.appendChild(y13);
+        }
+        
+        if (cand == 4){
+         container4.appendChild(y1);
+          container4.appendChild(y12);
+            const y13 = document.createElement('p');
+           y13.textContent = response.contests[3].candidates[2].name + " - " + response.contests[3].candidates[2].party;
+          const y14 = document.createElement('p');
+          y14.textContent = response.contests[3].candidates[3].name + " - " + response.contests[3].candidates[3].party;
+          container4.appendChild(y13);
+          container4.appendChild(y14);
+        }
+        
+        if (cand == 5){
+           container4.appendChild(y1);
+          container4.appendChild(y12);
+               const y13 = document.createElement('p');
+           y13.textContent = response.contests[3].candidates[2].name + " - " + response.contests[3].candidates[2].party;
+          const y14 = document.createElement('p');
+          y14.textContent = response.contests[3].candidates[3].name + " - " + response.contests[3].candidates[3].party;
+          const y15 = document.createElement('p');
+          y15.textContent = response.contests[3].candidates[4].name + " - " + response.contests[3].candidates[4].party; 
+          container4.appendChild(y13);
+          container4.appendChild(y14);
+        container4.appendChild(y15);
+
+        }
+        
+        if (cand == 6){
+           container4.appendChild(y1);
+          container4.appendChild(y12);
+              const y13 = document.createElement('p');
+           y13.textContent = response.contests[3].candidates[2].name + " - " + response.contests[3].candidates[2].party;
+          const y14 = document.createElement('p');
+          y14.textContent = response.contests[3].candidates[3].name + " - " + response.contests[3].candidates[3].party;
+          const y15 = document.createElement('p');
+          y15.textContent = response.contests[3].candidates[4].name + " - " + response.contests[3].candidates[4].party; 
+          const y16 = document.createElement('p');
+          y16.textContent = response.contests[3].candidates[5].name + " - " + response.contests[3].candidates[5].party;
+          container4.appendChild(y13);
+          container4.appendChild(y14);
+        container4.appendChild(y15);
+        container4.appendChild(y16);
+
+        }
+        
+        if (cand == 7){
+           container4.appendChild(y1);
+          container4.appendChild(y12);
+             const y13 = document.createElement('p');
+           y13.textContent = response.contests[3].candidates[2].name + " - " + response.contests[3].candidates[2].party;
+          const y14 = document.createElement('p');
+          y14.textContent = response.contests[3].candidates[3].name + " - " + response.contests[3].candidates[3].party;
+          const y15 = document.createElement('p');
+          y15.textContent = response.contests[3].candidates[4].name + " - " + response.contests[3].candidates[4].party; 
+          const y16 = document.createElement('p');
+          y16.textContent = response.contests[3].candidates[5].name + " - " + response.contests[3].candidates[5].party;
+          const y17 = document.createElement('p');
+          y17.textContent = response.contests[3].candidates[6].name + " - " + response.contests[3].candidates[6].party;
+          container4.appendChild(y13);
+          container4.appendChild(y14);
+        container4.appendChild(y15);
+        container4.appendChild(y16);
+        container4.appendChild(y17);
+
+        }
+        
+          var popcorn = response.contests[4].candidates.length;
+          const q1 = document.createElement('p');
+          q1.textContent = response.contests[4].candidates[0].name + " - " + response.contests[4].candidates[0].party;
+          const q12 = document.createElement('p');
+          q12.textContent = response.contests[4].candidates[1].name + " - " + response.contests[4].candidates[1].party;
+      
+          
+        if (popcorn == 2){
+          container5.appendChild(q1);
+          container5.appendChild(q12);
+        }
+        
+        if (popcorn == 3){
+           container5.appendChild(q1);
+          container5.appendChild(q12);
+            const q13 = document.createElement('p');
+           q13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          container5.appendChild(q13);
+        }
+        
+        if (popcorn == 4){
+         container5.appendChild(q1);
+          container5.appendChild(q12);
+            const q13 = document.createElement('p');
+           q13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          const q14 = document.createElement('p');
+          q14.textContent = response.contests[4].candidates[3].name + " - " + response.contests[4].candidates[3].party;
+          container5.appendChild(q13);
+          container5.appendChild(q14);
+        }
+        
+        if (popcorn == 5){
+           container5.appendChild(q1);
+          container5.appendChild(q12);
+               const q13 = document.createElement('p');
+           q13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          const q14 = document.createElement('p');
+          q14.textContent = response.contests[4].candidates[3].name + " - " + response.contests[4].candidates[3].party;
+          const q15 = document.createElement('p');
+          q15.textContent = response.contests[4].candidates[4].name + " - " + response.contests[4].candidates[4].party; 
+          container5.appendChild(q13);
+          container5.appendChild(q14);
+        container5.appendChild(q15);
+
+        }
+        
+        if (popcorn == 6){
+           container5.appendChild(q1);
+          container5.appendChild(q12);
+              const q13 = document.createElement('p');
+           q13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          const q14 = document.createElement('p');
+          q14.textContent = response.contests[4].candidates[3].name + " - " + response.contests[4].candidates[3].party;
+          const q15 = document.createElement('p');
+          q15.textContent = response.contests[4].candidates[4].name + " - " + response.contests[4].candidates[4].party; 
+          const q16 = document.createElement('p');
+          q16.textContent = response.contests[4].candidates[5].name + " - " + response.contests[4].candidates[5].party;
+          container5.appendChild(q13);
+          container5.appendChild(q14);
+        container5.appendChild(q15);
+        container5.appendChild(q16);
+
+        }
+        
+        if (popcorn == 7){
+           container5.appendChild(q1);
+          container5.appendChild(q12);
+             const q13 = document.createElement('p');
+           q13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          const q14 = document.createElement('p');
+          q14.textContent = response.contests[4].candidates[3].name + " - " + response.contests[4].candidates[3].party;
+          const q15 = document.createElement('p');
+          q15.textContent = response.contests[4].candidates[4].name + " - " + response.contests[4].candidates[4].party; 
+          const q16 = document.createElement('p');
+          q16.textContent = response.contests[4].candidates[5].name + " - " + response.contests[4].candidates[5].party;
+          const q17 = document.createElement('p');
+          q17.textContent = response.contests[4].candidates[6].name + " - " + response.contests[4].candidates[6].party;
+          container5.appendChild(q13);
+          container5.appendChild(q14);
+        container5.appendChild(q15);
+        container5.appendChild(q16);
+        container5.appendChild(q17);
+
+        }
+    
+        
+
+        
+        $('#results1').prepend(container1);
+        $('#results2').prepend(container2);
+        $('#results3').prepend(container3);
+        $('#results4').prepend(container4);
+        $('#results5').prepend(container5);
+      },
+      error: function(){
+        $('#results').text('ERROR')
+      }
+    })
+  })
+})
+     </script>
+     <body class="contact is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+<header id="header" class="alt">
+				<h1 id="logo"><a href="/">POLITIC-Z</a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="submenu">
+								<a href="#">Vote</a>
+							<ul>
+								<li><a href="/register">Register to Vote</a></li>
+								<li><a href="/elections">Upcoming Elections</a></li>
+								<li><a href="/locations">Polling Locations</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#">Learn</a>
+								<ul>
+									<li><a href="/senators" >Find Your Senators</a></li>
+									<li><a href="/representative">Find Your Representative</a></li>
+									<li><a href="/quiz">Political Party Quiz</a></li>
+									<!--<li><a href="/natquiz">Naturalization Quiz</a></li>-->
+									
+								</ul>
+							<li><a href="/news">Stay Informed</a></li>
+						</ul>
+					</nav>
+			</header>
+			<!-- Main -->
+				<article id="main">
+					<br>
+					<header>
+							<!-- Content -->
+							<section class="wrapper style3 special container medium">
+								<center>
+								<div class="content">
+					
+
+    <h2>Upcoming Elections!</h2>
+    <p>Want to find out the candidates of upcoming elections near you? Enter your address to find out!</p>
+    <br>
+    <label for="address">Address</label> 
+    <input class ="help" id="address" type="text"> 
+    <label for="city">City</label> 
+    <input class ="help" id="city" type="text">
+        <label for="state">State</label> 
+    <input class ="help" id="state" type="text">
+    <br>
+    <script>
+   function showDiv() {
+     document.getElementById('welcomeDiv').style.display = "block";
+     document.getElementById('welcomeDiv1').style.display = "block";
+     document.getElementById('welcomeDiv2').style.display = "block";
+     document.getElementById('welcomeDiv3').style.display = "block";
+     document.getElementById('welcomeDiv4').style.display = "block";
+     
+}
+    </script>
+    <!--<button name="answer"; value="showDiv"; onclick="showDiv()"; id="representatives" >Submit</button>-->
+    <style>
+    	a{
+    		border-bottom: 1px dotted #000;
+    	}
+    </style>
+    <input type="button" name="answer" value="Submit" id="representatives" onclick="showDiv()" />
+	<br>
+	  </section>
+	  <section id="welcomeDiv" style="display:none" class="wrapper style3 special container medium">
+    <div id="results1"></div>
+    </section>
+    <section id="welcomeDiv1" style="display:none"class="wrapper style3 special container medium">
+    <div id="results2"></div>
+    </section>
+    <section id="welcomeDiv2" style="display:none"  class="wrapper style3 special container medium">
+    <div id="results3"></div>
+    </section>
+    <section id="welcomeDiv3" style="display:none" class="wrapper style3 special container medium">
+    <div id="results4"></div>
+    </section>
+    <section id="welcomeDiv4" style="display:none" class="wrapper style3 special container medium">
+    <div id="results5"></div>
+    </section>
+    <script type="text/javascript" src="ajax.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+  
+  			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/intro.js"></script>
+</html>

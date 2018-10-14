@@ -1,0 +1,84 @@
+ var candid = response.contests[4].candidates.length;
+          const p1 = document.createElement('p');
+          p1.textContent = response.contests[4].candidates[0].name + " - " + response.contests[4].candidates[0].party;
+          const p12 = document.createElement('p');
+          p12.textContent = response.contests[4].candidates[1].name + " - " + response.contests[4].candidates[1].party;
+      
+          
+        if (candid == 2){
+          container5.appendChild(p1);
+          container5.appendChild(p12);
+        }
+        
+        if (candid == 3){
+           container5.appendChild(p1);
+          container5.appendChild(p12);
+            const p13 = document.createElement('p');
+           p13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          container5.appendChild(p13);
+        }
+        
+        if (candid == 4){
+         container5.appendChild(p1);
+          container5.appendChild(p12);
+            const p13 = document.createElement('p');
+           p13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          const p14 = document.createElement('p');
+          p14.textContent = response.contests[4].candidates[3].name + " - " + response.contests[4].candidates[3].party;
+          container5.appendChild(p13);
+          container5.appendChild(p14);
+        }
+        
+        if (candid == 5){
+           container5.appendChild(p1);
+          container5.appendChild(p12);
+               const p13 = document.createElement('p');
+           p13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          const p14 = document.createElement('p');
+          p14.textContent = response.contests[4].candidates[3].name + " - " + response.contests[4].candidates[3].party;
+          const p15 = document.createElement('p');
+          p15.textContent = response.contests[4].candidates[4].name + " - " + response.contests[4].candidates[4].party; 
+          container5.appendChild(p13);
+          container5.appendChild(p14);
+        container5.appendChild(p15);
+
+        }
+        
+        if (candid == 6){
+           container5.appendChild(p1);
+          container5.appendChild(p12);
+              const p13 = document.createElement('p');
+           p13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          const p14 = document.createElement('p');
+          p14.textContent = response.contests[4].candidates[3].name + " - " + response.contests[4].candidates[3].party;
+          const p15 = document.createElement('p');
+          p15.textContent = response.contests[4].candidates[4].name + " - " + response.contests[4].candidates[4].party; 
+          const p16 = document.createElement('p');
+          p16.textContent = response.contests[4].candidates[5].name + " - " + response.contests[4].candidates[5].party;
+          container5.appendChild(p13);
+          container5.appendChild(p14);
+        container5.appendChild(p15);
+        container5.appendChild(p16);
+
+        }
+        
+        if (candid == 7){
+           container5.appendChild(p1);
+          container5.appendChild(p12);
+             const p13 = document.createElement('p');
+           p13.textContent = response.contests[4].candidates[2].name + " - " + response.contests[4].candidates[2].party;
+          const p14 = document.createElement('p');
+          p14.textContent = response.contests[4].candidates[3].name + " - " + response.contests[4].candidates[3].party;
+          const p15 = document.createElement('p');
+          p15.textContent = response.contests[4].candidates[4].name + " - " + response.contests[4].candidates[4].party; 
+          const p16 = document.createElement('p');
+          p16.textContent = response.contests[4].candidates[5].name + " - " + response.contests[4].candidates[5].party;
+          const p17 = document.createElement('p');
+          p17.textContent = response.contests[4].candidates[6].name + " - " + response.contests[4].candidates[6].party;
+          container5.appendChild(p13);
+          container5.appendChild(p14);
+        container5.appendChild(p15);
+        container5.appendChild(p16);
+        container5.appendChild(p17);
+
+        }

@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Which Political Party?</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../assets/css/style.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="contact is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+<header id="header" class="alt">
+				<h1 id="logo"><a href="/">POLITIC-Z</a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="submenu">
+								<a href="#">Vote</a>
+							<ul>
+								<li><a href="/register">Register to Vote</a></li>
+								<li><a href="/elections">Upcoming Elections</a></li>
+							  <li><a href="/locations">Polling Locations</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#">Learn</a>
+								<ul>
+									<li><a href="/senators" >Find Your Senators</a></li>
+									<li><a href="/representative">Find Your Representative</a></li>
+									<li><a href="/quiz">Political Party Quiz</a></li>
+									<!--<li><a href="/natquiz">Naturalization Quiz</a></li>-->
+									
+								</ul>
+							<li><a href="/news">Stay Informed</a></li>
+						</ul>
+					</nav>
+			</header>
+
+			<!-- Main -->
+				<article id="main">
+					<br>
+					<header>
+							<!-- Content -->
+							<section class="wrapper style3 special container medium">
+								<center>
+								<div class="content">
+								    <h1><%=@quiz%></h1>
+								    <iframe src='https://giphy.com/embed/3osxYcwi3hCVbzNYqY' width='480' height='269' frameBorder='0' class='giphy-embed' allowFullScreen></iframe><p><a href='https://giphy.com/gifs/cbs-3osxYcwi3hCVbzNYqY'></a>
+								</div>
+							
+                   
+							</center>
+								<style>
+									*, *::before, *::after {
+                    box-sizing: border-box;
+                  }
+                  
+                  .share {
+                    position: relative;
+                    width: 200px;
+                    height: 60px;
+                    left: 17.5vw;
+                    font-size: 20px;
+                    letter-spacing: 2px;
+                    overflow: hidden;
+                    background: rgba(124, 128, 129, 0.5);
+                    border-radius: 30px;
+                    text-shadow: 0 -1px 0 rgba(0, 0, 0, .1);
+                    transition: all 0.2s ease-in-out;
+                    cursor: default;
+                    user-select: none;
+                  }
+                  .share .text {
+                    position: relative;
+                    top: 15.5px;
+                    overflow: hidden;
+                    text-align: right;
+                    z-index: 1;
+                  }
+                  .share .text em {
+                    position: relative;
+                    right: 0;
+                    top: 0;
+                    transition: right 0.2s ease-in-out 0.1s;
+                  }
+                  .share .ico-share {
+                    position: absolute;
+                    top: 20px;
+                    right: 43px;
+                    transition: right 0.2s ease-in-out;
+                    width: 20px;
+                    height: 20px;
+                  }
+                  .share .ico {
+                    font-size: 24px;
+                    position: absolute;
+                    top: 18px;
+                    left: -35px;
+                    transition: all 0.2s ease-in-out;
+                    display: inline-block;
+                    z-index: 2;
+                  }
+                  .share:hover {
+                    background: rgba(124, 128, 129, 0.5);
+                    box-shadow: inset 0 3px 10px rgba(0, 0, 0, .3);
+                  }
+                  .share:hover em {
+                    right: -300%;
+                    transition-delay: 0;
+                  }
+                  .share:hover .fb {
+                    left: 32px;
+                    transition-delay: 0.3s;
+                  }
+                  .share:hover .tw {
+                    left: 70px;
+                    font-size: 25px;
+                    transition-delay: 0.2s;
+                  }
+                  .share:hover .gp {
+                    left: 119px;
+                    transition-delay: 0.1s;
+                  }
+                  .share:hover .ico-share {
+                    top: 23px;
+                    right: 30px;
+                    width: 15px;
+                    height: 15px;
+                  }
+                  /* Second */
+                  .share:nth-child(2) {
+                    margin-top: 50px;
+                    overflow: visible;
+                    display: none;
+                  }
+                  .share:nth-child(2)::before, .share:nth-child(2)::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    background: linear-gradient(to bottom, #15aaff, #149fee);
+                    border-radius: 30px;
+                    transition: all 0.2s ease-in-out 0s;
+                    transition-delay: 0.35s;
+                  }
+                  .share:nth-child(2)::before {
+                    background: linear-gradient(to bottom, #e2e2e2, #f5f5f5);
+                    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.7);
+                    top: 0;
+                    width: 78%;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    z-index: -1;
+                    transition: top 0.17s ease-in-out;
+                    transition-delay: 0.35s;
+                    border-radius: 0 0 8px 8px;
+                  }
+                  .share:nth-child(2) .text, .share:nth-child(2) .ico-share {
+                    z-index: 2;
+                  }
+                  .share:nth-child(2) .ico {
+                    color: #15a7fa;
+                    top: 10px;
+                    text-shadow: none;
+                    transition: all 0.17s ease-in-out;
+                    z-index: 1;
+                  }
+                  .share:nth-child(2) .fb {
+                    left: 48px;
+                    transition-delay: 0.1s;
+                    color: #43609c;
+                  }
+                  .share:nth-child(2) .tw {
+                    left: 87px;
+                    transition-delay: 0.18s;
+                    color: #1da1f2;
+                  }
+                  .share:nth-child(2) .gp {
+                    left: 135px;
+                    transition-delay: 0.26s;
+                    color: #d73d32;
+                  }
+                  .share:nth-child(2) .ico-share {
+                    transition: all 0.17s ease-in-out 0.1s;
+                  }
+                  .share:nth-child(2):hover::after {
+                    box-shadow: 0 1px 4px rgba(0, 0, 0, .5), inset 0 3px 10px rgba(0, 0, 0, .3);
+                    background: linear-gradient(to top, #15aaff, #149fee);
+                    transition-delay: 0s;
+                  }
+                  .share:nth-child(2):hover::before {
+                    top: 90%;
+                    transition-delay: 0s;
+                  }
+                  .share:nth-child(2):hover .text em {
+                    right: 0;
+                  }
+                  .share:nth-child(2):hover .ico-share {
+                    top: 21px;
+                    right: 43px;
+                    width: 16px;
+                    height: 16px;
+                    transition-delay: 0s;
+                  }
+                  .share:nth-child(2):hover .ico {
+                    top: 75px;
+                  }
+                  
+                  img {
+                      position: absolute;
+                      left: 38vw;
+                      z-index: 2;
+                  }
+
+                </style>
+                <script>
+                  var twitterShare = document.querySelector('[data-js="twitter-share"]');
+
+twitterShare.onclick = function(e) {
+  e.preventDefault();
+  var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup', 'height=350,width=600');
+  if(twitterWindow.focus) { twitterWindow.focus(); }
+    return false;
+  }
+
+var facebookShare = document.querySelector('[data-js="facebook-share"]');
+
+facebookShare.onclick = function(e) {
+  e.preventDefault();
+  var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
+  if(facebookWindow.focus) { facebookWindow.focus(); }
+    return false;
+}
+                </script>
+								<div class="row">
+  									<div class="column">
+										<a href="/register">
+		                                <img border="0" src="../assets/images/back2.png" width="62.5" height="62.5" left:11vw;>
+		                                </a> 
+		                             </div>
+		                            <div class="column">
+						<div class="share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fapp-challenge-janicekim60.c9users.io%2F&amp;src=sdkpreparse" target="_blank" class="ico fb"><i class="fa fa-facebook"></i></a>
+  <a href="https://twitter.com/home?status=I%20just%20found%20out%20what%20political%20party%20my%20views%20align%20with!%20You%20can%20too%20at%20Politic-Z!%20http%3A//app-challenge-janicekim60.c9users.io" target="_blank" class="ico tw"><i class="fa fa-twitter"></i></a>
+  <a href="https://plus.google.com/share?url=http%3A//codepen.io/supah/pen/MKNwZV" target="_blank" class="ico gp"><i class="fa fa-google-plus"></i></a>
+  <span class="text"><em>SHARE</em></span>
+  <svg class="ico-share"><use xlink:href="#ico-share"></use></svg>
+</div>
+</div>
+</div>
+</center>
+                    </header>
+                    </section>
+				</article>
+					<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<hmtl>
+  <head>
+    <title>Nearby Polling Locations</title>
+	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/style.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		
+  </head>
+ 
+  <body>
+  	<style>
+  	
+				p {
+          /*display: block;*/
+          margin-block-start: 0em;
+          margin-block-end: 0em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+}
+				
+				p{
+					/*line-height: 0.2;*/
+				}
+				
+		h5 {
+			font-size: 17px;
+			line-height: 0.1;
+		}
+		
+		
+				
+  	</style>
+     <script>
+var newString = ""
+
+function replaceSpace(string){
+  for (let i = 0; i < string.length; i++){
+    if (string[i] == " "){
+      newString += "+";
+    }else{
+    newString += string[i]
+    }
+  }; 
+  var returnString = newString
+  newString = ""
+  return String(returnString)
+}
+
+$(document).ready(function(){
+  $('#representatives').click(function(){
+    let addressOrg = $('#address').val();
+    let cityOrg = $('#city').val();
+    let state = $('#state').val();
+    let address = replaceSpace(addressOrg);
+    let city = replaceSpace(cityOrg);
+
+    $.ajax({
+      url: 
+      (`https://www.googleapis.com/civicinfo/v2/voterinfo?address=${address}%20${city}%20${state}&electionId=2000&key=AIzaSyDFYpjPCBUVQLyfS39-lBKRWCkD7-u4zug`),
+      type:'GET',
+      data: {
+        format: 'json'
+      },    
+      success:function(response){
+        const container1 = document.createElement("section");
+        const container2 = document.createElement("section");
+        const h3 = document.createElement('h2');
+        const h1 = document.createElement('h2');
+        const h4 = document.createElement('h4');
+        const h32 = document.createElement('h4');
+        h3.textContent = response.state[0].electionAdministrationBody.name;
+        h4.textContent = response.state[0].electionAdministrationBody.correspondenceAddress.city + ", " + response.state[0].electionAdministrationBody.correspondenceAddress.state;
+        h1.textContent = response.state[0].local_jurisdiction.name;
+        h32.textContent =  response.state[0].local_jurisdiction.electionAdministrationBody.physicalAddress.city + ", " + response.state[0].local_jurisdiction.electionAdministrationBody.physicalAddress.state;
+        h4.textContent = response.state[0].electionAdministrationBody.correspondenceAddress.city + ", " + response.state[0].electionAdministrationBody.correspondenceAddress.state;
+         const a = document.createElement('a');
+		    a.href = response.state[0].electionAdministrationBody.electionInfoUrl.toString();
+		    a.textContent =  "Find Out More";
+		    const a1 = document.createElement('a');
+		    a1.href = response.state[0].local_jurisdiction.electionAdministrationBody.electionInfoUrl.toString();
+		    a1.textContent =  "Find Out More";
+		    
+        container1.appendChild(h3);
+		container1.appendChild(h4);
+         container1.appendChild(a);
+        container2.appendChild(h1);
+        container2.appendChild(h32);
+        container2.appendChild(a1);
+
+        
+       
+        $('#results1').prepend(container1);
+        $('#results2').prepend(container2);
+
+      },
+      error: function(){
+        $('#results').text('ERROR')
+      }
+    })
+  })
+})
+     </script>
+     <body class="contact is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+<header id="header" class="alt">
+				<h1 id="logo"><a href="/">POLITIC-Z</a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="submenu">
+								<a href="#">Vote</a>
+							<ul>
+								<li><a href="/register">Register to Vote</a></li>
+								<li><a href="/elections">Upcoming Elections</a></li>
+								<li><a href="/locations">Polling Locations</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#">Learn</a>
+								<ul>
+									<li><a href="/senators" >Find Your Senators</a></li>
+									<li><a href="/representative">Find Your Representative</a></li>
+									<li><a href="/quiz">Political Party Quiz</a></li>
+									<!--<li><a href="/natquiz">Naturalization Quiz</a></li>-->
+									
+								</ul>
+							<li><a href="/news">Stay Informed</a></li>
+						</ul>
+					</nav>
+			</header>
+			<!-- Main -->
+				<article id="main">
+					<br>
+					<header>
+							<!-- Content -->
+							<section id="thisIsaTest"class="wrapper style3 special container medium">
+								<center>
+								<div class="content">
+								 
+    <h2>Nearby Polling Locations</h2>
+    <p>Registered to vote? Curious where you will be going to vote? Search here!</p>
+    <br>
+    <label for="address">Address</label> 
+    <input class ="help" id="address" type="text"> 
+    <label for="city">City</label> 
+    <input class ="help" id="city" type="text">
+        <label for="state">State</label> 
+    <input class ="help" id="state" type="text">
+    <br>
+    <script>
+   function showDiv() {
+      // document.getElementById('thisIsaTest').remove();
+     document.getElementById('welcomeDiv').style.display = "block";
+     document.getElementById('welcomeDiv1').style.display = "block";
+}
+    </script>
+    <input type="button" name="answer" value="Submit" id="representatives" onclick="showDiv()" />
+	<br>
+	  </section>
+	      <style>
+    	a{
+    		border-bottom: 1px dotted #000;
+    	}
+    </style>
+	  <section id="welcomeDiv" style="display:none" class="wrapper style3 special container medium">
+    <div id="results1"></div>
+    </section>
+    <section id="welcomeDiv1" style="display:none"class="wrapper style3 special container medium">
+    <div id="results2"></div>
+    </section>
+    
+    <script type="text/javascript" src="ajax.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
+  
+  			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/intro.js"></script>
+</html>

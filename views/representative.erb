@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<hmtl>
+  <head>
+    <title>Find Your Rep</title>
+	<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/style.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		
+  </head>
+ 
+  <body>
+  	<style>
+
+			h6, p, {
+			line-height: 0.1;
+		}
+	
+		p,h6, h3, h2, h4 {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+
+		img{
+		    height: 225px;
+            width: 180px;
+		}
+		
+		.democlass {
+            	border-bottom: dotted 1px;
+				line-height: 0.2;
+            }
+				
+  	</style>
+     <script>
+         var newString = ""
+
+function replaceSpace(string){
+  for (let i = 0; i < string.length; i++){
+    if (string[i] == " "){
+      newString += "+";
+    }else{
+    newString += string[i];
+    }
+  }
+  var returnString = newString;
+  newString = "";
+  return String(returnString);
+}
+
+$(document).ready(function(){
+  $('#representative').click(function(){
+    let addressOrg = $('#address').val();
+    let cityOrg = $('#city').val();
+    let state = $('#state').val();
+    let zipcode = $('#zipcode').val();
+    let address = replaceSpace(addressOrg);
+    let city = replaceSpace(cityOrg);
+
+    $.ajax({
+      url: (`https://www.googleapis.com/civicinfo/v2/representatives/?address=${address}%2C+${city}%2C+${state}%2C+${zipcode}&levels=country&roles=legislatorLowerBody&key=AIzaSyDFYpjPCBUVQLyfS39-lBKRWCkD7-u4zug`),
+      type:'GET',
+      data: {
+        format: 'json'
+      },            
+      
+      success:function(response){
+        const h3 = document.createElement('h3');
+        h3.textContent = response.officials[0].name;
+        const p = document.createElement('p');
+        const h6 = document.createElement('h6');
+        h6.textContent = response.offices[0].name;
+        p.textContent = response.officials[0].party;
+        const logo = document.createElement('img');
+	  	  logo.src = response.officials[0].photoUrl;
+		    const a = document.createElement('a');
+		    a.href = response.officials[0].urls.toString();
+		    a.textContent = response.officials[0].urls;
+        // const img = document.createElement('img');
+        //     img.src = document.getElementById(response.officials[0].photoUrl);
+        //     document.body.appendChild(img);
+
+        const container1 = document.createElement("div");
+        container1.appendChild(logo);
+        container1.appendChild(h3);
+        container1.appendChild(p);
+        container1.appendChild(h6);
+        container1.appendChild(a);
+        
+        $('#results').prepend(container1);
+      // error: function(){
+      //   $('#results').text('ERROR')
+      // }
+      }
+    })
+  })
+})
+     </script>
+     <body class="contact is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+<header id="header" class="alt">
+				<h1 id="logo"><a href="/">POLITIC-Z</a></h1>
+					<nav id="nav">
+						<ul>
+							<li class="submenu">
+								<a href="#">Vote</a>
+							<ul>
+								<li><a href="/register">Register to Vote</a></li>
+								<li><a href="/elections">Upcoming Elections</a></li>
+				      	<li><a href="/locations">Polling Locations</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#">Learn</a>
+								<ul>
+									<li><a href="/senators" >Find Your Senators</a></li>
+									<li><a href="/representative">Find Your Representative</a></li>
+									<li><a href="/quiz">Political Party Quiz</a></li>
+									<!--<li><a href="/natquiz">Naturalization Quiz</a></li>-->
+									
+								</ul>
+							<li><a href="/news">Stay Informed</a></li>
+						</ul>
+					</nav>
+			</header>
+			<!-- Main -->
+				<article id="main">
+					<br>
+					<header>
+							<!-- Content -->
+							<section class="wrapper style3 special container medium">
+								<center>
+								<div class="content">
+
+    <h2>Find Your Representative!</h2>
+      <p>Input your address to find out who what congressional district you belong to and who your representative is!</p>
+      <br>
+    <label for="address">Address</label> 
+    <input id="address" type="text"> 
+    <label for="city">City</label> 
+    <input id="city" type="text">
+        <label for="state">State</label> 
+    <input id="state" type="text">
+        <label for="zipcode">Zipcode</label> 
+    <input id="zipcode" type="text">
+    <br>
+     <script>
+   function showDiv() {
+     document.getElementById('welcomeDiv').style.display = "block";
+}
+    </script>
+    <input type="button" name="answer" value="Submit" id="representative" onclick="showDiv()" />
+	<br>
+	</section>
+	<section id="welcomeDiv" style="display:none" class="wrapper style3 special container medium">
+    <div id="results"></div>
+    </section>
+    <script type="text/javascript" src="ajax.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </section>
+  </div>
+  </body>
+  	<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.dropotron.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+</html>
